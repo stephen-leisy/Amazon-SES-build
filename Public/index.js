@@ -26,6 +26,7 @@ form.addEventListener('submit', (event) => {
   const formData = new FormData(form);
   fetch('https://amazon-ses-build.herokuapp.com/api/v1/orders', {
     method: 'POST',
+    mode: 'no-cors',
     headers: {
       'Content-Type': 'application/json',
     },
