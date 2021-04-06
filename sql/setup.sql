@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS orders;
+
+CREATE TABLE orders (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    users_name VARCHAR(256) NOT NULL,
+    email VARCHAR(256) NOT NULL,
+    item_id INTEGER NOT NULL,
+    quantity INTEGER CHECK (quantity > 0)
+);
