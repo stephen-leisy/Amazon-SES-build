@@ -24,7 +24,7 @@ div.append(p, form);
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   const formData = new FormData(form);
-  fetch('http://localhost:7890/api/v1/orders', {
+  fetch('https://amazon-ses-build.herokuapp.com/api/v1/orders', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -48,7 +48,5 @@ form.addEventListener('submit', (event) => {
       modifyButton.addEventListener('click', () => {
         window.location.href = `./modify-orders/?id=${res.id}`;
       });
-
-
     });
 });
