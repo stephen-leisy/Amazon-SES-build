@@ -3,7 +3,7 @@ const orderId = params.get('id');
 const div = document.getElementById('splash-zone');
 // const url = 'http://localhost:7890/api/v1/orders/';
 
-fetch(`https://amazon-ses-build.herokuapp.com/api/v1/orders/${orderId}`)
+fetch(`/api/v1/orders/${orderId}`)
   .then((res) => res.json())
   .then((data) => {
     const p = document.createElement('p');
@@ -13,7 +13,7 @@ fetch(`https://amazon-ses-build.herokuapp.com/api/v1/orders/${orderId}`)
     deleteButton.textContent = 'Delete Order';
     div.append(p, deleteButton);
     deleteButton.addEventListener('click', () => {
-      fetch(`https://amazon-ses-build.herokuapp.com/api/v1/orders/${orderId}`, {
+      fetch(`/api/v1/orders/${orderId}`, {
         method: 'DELETE',
         body: JSON.stringify({
           quantity: data.quantity,
